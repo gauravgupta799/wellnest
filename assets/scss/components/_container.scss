@@ -1,0 +1,65 @@
+@use "../abstract/functions" as *;
+@use "../abstract/breakpoints" as *;
+
+$full-width:100%;
+
+// ========= page container starts =========
+.page-container {
+    max-width: none;
+    margin:0 rem(16);
+
+    @include breakpoint-sm{
+        margin:0 rem(20);
+    }
+    
+    @include breakpoint-md{
+        max-width:calc($full-width*0.8956);
+        margin:0 auto;
+    }
+  
+    @include breakpoint-lg{
+        max-width:calc($full-width*0.9093);
+    }
+
+    @include breakpoint-xl{
+        max-width:calc($full-width*0.9166);
+    }
+
+    @include breakpoint-xxl{
+        // max-width:calc($full-width*0.916667);
+        max-width:calc($full-width*0.896);
+    }
+}
+
+
+// page container with no margin on left
+.page-container--ml{
+    // @include breakpoint-md{
+    //     max-width:calc($full-width*0.8956);
+    //     margin-left:auto;
+    //     margin-right:0;
+    // }
+  
+    @include breakpoint-lg{
+        max-width:calc($full-width*0.95625);
+        margin-left:auto;
+        margin-right:0;
+    }
+}
+
+
+// page container with no margin on right
+.page-container--mr{
+    // @include breakpoint-md{
+    //     max-width:calc($full-width*0.8956);
+    //     margin-left:0;
+    //     margin-right:auto;
+    // }
+  
+    @include breakpoint-lg{
+        max-width:calc($full-width*0.95625);
+        margin-left:0;
+        margin-right:auto;
+    }
+}
+

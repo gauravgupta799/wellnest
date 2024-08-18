@@ -1,0 +1,124 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+.form-container{
+    // width: min(100%, 80%);
+    max-width: 100%;
+    margin: 0 auto;
+    @include breakpoint-sm{
+        width: 90%;
+    }
+    @include breakpoint-xxl{
+        width: 80%;
+    }
+}
+
+.form-wrapper{
+    width: min(100%, rem(600));
+}
+
+.form{
+    &__group-wrapper{
+        @include flex-center-vertical;
+        gap:rem(16);
+    }
+    &__group{
+        position: relative;
+        width: 100%;
+    }
+    &__control{
+        outline:none;
+        border:none;
+        width: 100%;
+        background: $clr-white;
+        color:$clr-blue-light;
+        font-family: $ff-secondary;
+        caret-color: $clr-secondary;
+        font-size: rem(16);
+        line-height: 1.75;
+        padding:em(16);
+        @include border-radius(4px);
+
+        &::placeholder{
+            color:$clr-blue-light;
+            font-style: italic;
+        }
+    }
+
+    &__label{
+        pointer-events: none;
+        text-transform: capitalize;
+        font-family: $ff-secondary;
+        font-size: rem(16);
+        line-height: 1.75;
+        display: inline-block;
+        margin-bottom: rem(8);
+    }
+
+}
+
+.form-type-container{
+    @include flex-center-vertical;
+    flex-wrap: wrap;
+    gap:rem(10);
+
+    input{
+        display: none;
+    }
+
+    label{
+        font-size: rem(14);
+        font-style: italic;
+        padding:em(16) em(12);
+        @include border-radius(4px);
+        border: solid 1px $clr-white;
+        background-color: $clr-primary;
+        display: inline-block;
+        transition:all 0.3s ease;
+        cursor: pointer;
+        @include breakpoint-sm{
+            font-size: rem(16);
+            padding:em(16) em(24);
+        }
+        &:hover{
+            background: $clr-secondary;
+        }
+    }
+}
+
+
+.form-brand-group{
+    @include flex-center-vertical;
+    gap:rem(16);
+}
+
+// .form__group-wrapper{
+//     &:focus-within{
+//         border-color: $clr-secondary;  
+//         svg{
+//             path{
+//                 fill:$clr-secondary;
+//             }
+//         }
+//     }
+// }
+
+
+// .form__control:focus + label,
+// .form__control:valid + label{
+//     top: 0px;
+//     left: -10px;
+//     font-size: rem(16);
+//     background: $clr-tertiary;
+//     padding-inline:10px;
+//     border-radius: 20px;
+//     line-height: 1;
+// }
+
+// .form__control:focus + label{
+//     color:$clr-secondary;
+// }

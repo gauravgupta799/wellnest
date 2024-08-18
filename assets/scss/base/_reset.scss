@@ -1,0 +1,167 @@
+/*-----------------------------
+  [Dowgteam]
+  Project:Wellnest
+  Version:1.0
+  Starting Date: 14/08/2024
+  Last change: 14/08/2024 08:00 PM [Home]
+  Developed by: Yourhustler
+  Developer: Gaurav Gupta
+  Primary use: 
+--------------------------------------------------*/
+@use '../abstract/colors' as *; 
+@use '../abstract/breakpoints' as *; 
+@use "../abstract/fonts" as *;
+@use "../abstract/mixins" as *;
+@use "../abstract/functions" as *;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html{
+  font-size: 100%; /* 16px by default */
+  line-height: 1.15; /* 1.15 is a common default line-height */
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: rem(10);
+}
+
+::-webkit-scrollbar-track {
+  background-color: $clr-white;
+  -webkit-border-radius: 8px;
+  @include border-radius(8px);
+}
+
+::-webkit-scrollbar-thumb {
+  @include border-radius(8px);
+  -webkit-border-radius: 8px;
+  background: $clr-primary; 
+}
+
+::placeholder{
+  font-size: rem(16) !important;
+  font-family:$ff-secondary !important;
+  color:$clr-primary;
+}
+
+::selection{
+  color:$clr-white;
+  background-color: $clr-primary;
+}
+
+body {
+  @include font-body;
+  font-size: rem(18);
+  @include breakpoint-md{
+    font-size: rem(20);
+  }
+}
+
+html, body, div, nav,
+ul,  ol, li, dl, dt, dd,
+h1,  h2, h3, h4, h5, h6,
+pre, iframe, video, audio, figure, figcaption,
+form, fieldset, footer, input, textarea, header,
+article, aside, details, summary,
+p, span, strong, sub, sup, img,
+table, caption, tbody, thead, tfoot, tr, th, td,
+blockquote, q ,b {
+  margin: 0;
+  padding: 0;
+  border:0
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input{
+  caret-color: $clr-primary;
+}
+
+textarea{
+  resize:vertical;
+}
+
+a {
+  text-decoration: none;
+  color:$clr-black;
+}
+
+address{
+  font-style:normal;
+  font-size:100%;
+  color:$clr-primary;
+}
+
+small{
+  display: flex;
+  font-size: rem(16);
+  line-height: 1.75;
+  margin-top: rem(16);
+}
+
+p + p, h1 + p, h2 + p, h3 + p, h4 + p,  h5 + p, h6 + p{
+   margin-top:1rem;
+}
+
+span + span{
+  margin-top: 0.3125rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-size: 100%;
+  @include font-heading;
+}
+
+button{
+  border:none;
+  outline:none;
+  background: none;
+  font-family: $ff-primary;
+  cursor: pointer;
+}
+
+
+img, picture, video{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border:0;
+  object-fit: contain;
+}
+
+label{
+  color:$clr-primary;
+  font-size: rem(16);
+  font-family: $ff-primary;
+}

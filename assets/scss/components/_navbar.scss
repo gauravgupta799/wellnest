@@ -1,0 +1,285 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+.nav{
+    &__menu{
+        @include flex-center-vertical;
+        @include breakpoint-lg{
+            gap:rem(20);
+        }
+        @include breakpoint-xl{
+            gap:rem(32);
+        }
+        @include breakpoint-xxl{
+            gap:rem(64);
+        }
+    }
+
+    &__link{
+        @include relative-hidden;
+        display: inline-flex;
+        align-items: center;
+        font-size: rem(16);
+        line-height: 1.78;
+        text-transform: capitalize;
+        font-family: $ff-secondary;
+        // @media only screen and (min-width:em(1366)){
+        //     font-size: rem(18);
+        // }
+        @include breakpoint-lg{
+            font-size: rem(18);
+        }
+        span{
+            position: relative;
+            display: inline-flex;
+            margin: 0;
+            @include link-hover-effect($clr-black, $clr-secondary);
+        }
+
+        &.active,
+        &:hover{
+            span{
+                background-position: 0 0;
+            }
+        }
+    }
+}
+
+.nav, .header__right{
+    display: none;
+    @include breakpoint-lg{
+        display: flex;
+    }
+}
+
+// ===== MObile Menu Start ===========
+.mobile-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 1;
+    background: $clr-primary;
+    transform:translateX(-100%);
+    transition:transform 0.2s ease-out;
+    // display: none;
+    @include breakpoint-lg{
+        transform:translateX(-100%) !important;
+    }
+    &__inner{
+        display: flex;
+    }
+    &__list{
+        li{
+            @include relative-hidden;
+        }  
+    }
+    &__link{
+        @include relative-hidden;
+        text-transform: capitalize;
+        font-size: rem(28);
+        line-height: 1.8;
+        font-family: $ff-primary;
+        display: inline-flex;
+        align-items: center;
+        gap:10px;
+        @include breakpoint-md{
+            font-size: rem(32);
+        }
+        span{
+            display: inline-flex;
+            margin: 0;
+            @include link-hover-effect($clr-white, $clr-secondary);
+        }
+
+        &:hover{
+            span{
+                background-position: 0 0;
+            }
+        }
+    }
+
+    .footer__link{
+        @include link-hover-effect($clr-white, $clr-secondary);
+        &:hover{
+            background-position: 0 0;
+        }
+    }
+    .socials-link{
+        &::before{
+            background: $clr-secondary;
+        }
+    }
+}
+
+// ===== MObile Menu End ===========
+
+
+// ===== SubMenu Start ===========
+.subMenu{
+    @include relative-hidden;
+    &__list{
+        position: absolute;
+        background: $clr-primary;
+        background: $clr-white;
+        width: 260px;
+        @include border-radius(4px);
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+        transform: translateY(10px);
+        transition:transform 0.2s ease;
+        list-style: none;
+
+        li{
+            @include relative-hidden;
+            @include border-radius(4px);
+            white-space: nowrap;
+            ul{
+                display: none;
+                list-style: none;
+                position: absolute;
+                left: 100%;
+                top: 0;
+                background-color: $clr-primary;  
+            }
+
+            &:hover{
+                cursor: pointer;
+                background:$clr-secondary;
+                a{
+                    color:$clr-white;
+                }
+                ul{
+                    display: inherit;
+                }
+            }
+        }
+
+        &--mobile{
+            max-width: 300px;
+            margin-left: 16px;
+            @include border-radius(4px);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+
+            li{
+                display: inline-flex;
+                @include border-radius(4px);
+                .subMenu__link{
+                    transform:translateY(0);
+                    color:$clr-white;
+                    font-size: rem(20);
+                    font-family: $ff-primary;
+                    padding-block:0.7em;
+                }
+                &:hover{
+                    background-color: $clr-secondary;
+                    .subMenu__link{
+                        color:$clr-white;
+                    }
+                }
+            }
+        }
+    }
+
+    &__link{
+        $n:10;
+        display: inline-block;
+        color:$clr-primary;
+        font-size: rem(16);
+        line-height: 1.15;
+        padding:1em;
+        font-family: $ff-secondary;
+        transform: translateY(50px);
+        transition: transform .2s ease;
+        transition-duration: 0.5s;
+        text-transform: capitalize;
+        width: 100%;
+
+        @for $i from 1 through $n {
+            &:nth-of-type(#{$i}) {
+              transition-delay: 0.1s * $i;
+            }
+        } 
+
+        @include breakpoint-xl{
+            font-size: rem(18);
+        }
+    }
+
+    &:hover{
+        cursor: pointer;
+        overflow: visible;
+
+        .subMenu__list,  
+        .subMenu__link{
+            transform: translateY(0px);
+        }
+
+        .nav__link{
+            span{
+                color:$clr-secondary;
+            }
+            .caret-down-icon{
+                svg{
+                    transform: rotate(180deg);
+                    transform-origin: center;
+                    path{
+                        fill:$clr-secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.mobile-submenu{
+    &.active{
+        .dropdown-icon{
+            svg{
+                transform: rotate(182deg) translateY(-2px);
+                transform-origin: center;
+                path{
+                    fill:$clr-secondary;
+                }
+            }
+        }
+        .mobile-menu__link{
+            span{
+                color:$clr-secondary;
+            }
+        }
+    }
+}
+// ===== SubMenu End ===========
+
+
+// ===== Close-Menu-Button Start ===========
+.close-menu-btn{
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    &:hover{
+        cursor: pointer;
+        svg path{
+            fill:$clr-secondary;
+        }
+    }
+}
+// ===== Close-Menu-Button Start ===========
+
+.caret-down-icon{
+    svg{
+        transform: rotate(0deg);
+        transition:transform 0.3s ease;
+        path{
+            fill:$clr-black;
+        }
+    }
+}

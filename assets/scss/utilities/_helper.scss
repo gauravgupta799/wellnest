@@ -1,0 +1,176 @@
+@use '../abstract/colors' as *;
+@use '../abstract/breakpoints' as *; 
+@use '../abstract/functions' as *;
+@use "../abstract/fonts" as *;
+
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+.img-fluid-full{
+    width: 100%;
+    height: auto;
+}
+
+.img-cover{
+    width:100%;
+    object-fit:cover;
+}
+
+.list-none{
+    list-style: none;
+}
+
+.txt-primary{
+    color:$clr-primary;
+}
+
+.txt-secondary{
+    color:$clr-secondary;
+}
+
+.txt-white{
+    color:$clr-white;
+}
+
+.txt-black{
+    color:$clr-black;
+}
+
+.txt-center{
+    text-align:center;
+}
+
+.txt-left{
+    text-align:left
+}
+
+.txt-right{
+    text-align:right;
+}
+
+.uppercase{
+    text-transform:uppercase;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+.lowercase{
+    text-transform: lowercase;
+}
+
+.underline{
+  text-decoration: underline;   
+}
+
+.overflow--hidden{
+    overflow:hidden;
+}
+
+.bg--primary{
+    background: $clr-primary;
+}
+
+.bg--secondary{
+    background: $clr-secondary;
+}
+
+.bg--tertiary{
+    background: $clr-tertiary;
+}
+
+.bg--white{
+    background:$clr-white;
+}
+
+.mx-auto{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.list-none{
+    list-style: none;
+}
+
+.fz-16{
+    font-size: rem(16);
+    line-height: 1.5;
+}
+.fz-18{
+    font-size: rem(18);
+    line-height: 1.33;
+}
+
+
+// ====== Dividers Start ========
+.divider{
+    height: 1px;
+    width: 100%;
+    background:$clr-black;
+
+    &--white{
+        background:$clr-white;
+    }
+    &--grey{
+        background:$clr-grey; 
+    }
+    &--black{
+        height: 2px;
+    }
+}
+
+
+// ====== Dividers End ========
+.brdr-none{
+    border:none;
+}
+
+.overflow-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+
+.radius-12{
+    border-radius:12px;
+}
+
+.img-hover{
+    position: relative;
+    overflow: hidden;
+    img{
+        transition:transform 0.35s ease-out;
+    }
+
+    &:hover{
+        img{
+            transform:scale(1.065);
+        }
+    }
+}
+
+.body.disable-scroll{
+    overflow-y: hidden;
+}
+
+// ===== Overlay ========
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 11;
+    display: none;
+
+    &.active{
+        display: block;
+    }
+}
+
+.ff-primary{
+    font-family: $ff-primary;
+}

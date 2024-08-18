@@ -1,0 +1,40 @@
+// --------- Figtree SEmiBold -------------
+@font-face{
+    font-family:"Figtree-SemiBold";
+    src:url("../../../assets/fonts/Figtree/Figtree-SemiBold.woff2");
+    src:url("../../../assets/fonts/Figtree/Figtree-SemiBold.eot?#iefix") format("embedded-opentype"), 
+        url("../../../assets/fonts/Figtree/Figtree-SemiBold.woff2") format('woff2'),
+        url("../../../assets/fonts/Figtree/Figtree-SemiBold.woff") format('woff'),
+        url("../../../assets/fonts/Figtree/Figtree-SemiBold.ttf") format('truetype'),
+        url("../../../assets/fonts/Figtree/Figtree-SemiBold.svg#Figtree-SemiBold") format('svg');
+    font-weight:600;
+}
+
+// --------- Matter Regular -------------
+@font-face{
+    font-family:"Matter-Regular";
+    src:url("../../../assets/fonts/Matter/Matter-Regular.woff2");
+    src:url("../../../assets/fonts/Matter/Matter-Regular.eot?#iefix") format("embedded-opentype"), 
+        url("../../../assets/fonts/Matter/Matter-Regular.woff2") format('woff2'),
+        url("../../../assets/fonts/Matter/Matter-Regular.woff") format('woff'),
+        url("../../../assets/fonts/Matter/Matter-Regular.ttf") format('truetype'),
+        url("../../../assets/fonts/Matter/Matter-Regular.svg#Matter-Regular") format('svg');
+    font-weight:400;
+}
+
+// --------- Sora Regular -------------
+@font-face{
+    font-family:"Sora-Regular";
+    src:url("../../../assets/fonts/Sora/Sora-Regular.woff2");
+    src:url("../../../assets/fonts/Sora/Sora-Regular.eot?#iefix") format("embedded-opentype"), 
+        url("../../../assets/fonts/Sora/Sora-Regular.woff2") format('woff2'),
+        url("../../../assets/fonts/Sora/Sora-Regular.woff") format('woff'),
+        url("../../../assets/fonts/Sora/Sora-Regular.ttf") format('truetype'),
+        url("../../../assets/fonts/Sora/Sora-Regular.svg#Sora-Regular") format('svg');
+    font-weight:400;
+}
+
+
+$ff-primary:"Figtree-SemiBold", sans-serif;
+$ff-secondary:"Matter-Regular", sans-serif;
+$ff-tertiary:"Sora-Regular", sans-serif;

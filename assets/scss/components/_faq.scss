@@ -1,0 +1,98 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+// ===== Accordion ======
+.accordion{
+    &__container{
+        display: flex;
+        padding-block: em(32);
+        gap:6px;
+        @include breakpoint-sm{
+            padding-block: em(36);
+            gap:10px;
+        }
+        @include breakpoint-md{
+            padding-block: em(36);
+            padding-right: 1rem;
+            gap:16px;
+        }
+        @include breakpoint-md{
+            padding-right: 2rem;
+        }
+    }
+    &__title{
+        position: relative;
+        text-transform: capitalize;
+        display: flex;
+        gap:rem(16);
+        @include transition(all, 0.25s, ease);
+        color:$clr-black;
+        span{
+            max-width: 90%;
+        }
+        &::after{
+            content: "+";
+            color:$clr-primary;
+            flex-shrink: 0;
+            position: absolute;
+            right: 0;
+            transition:all 0.25s ease;
+            font-size: 40px;
+            font-weight: 600;
+            @include breakpoint-sm{
+                font-size: 44px;
+            }
+            @include breakpoint-md{
+                font-size: 48px;
+            }
+        }
+        &:hover{
+            color: $clr-primary;
+        }
+    }
+    &__icon-wrapper{
+        span{
+            display: flex;
+            @include transition(all, 0.25s, ease);
+        }
+    }
+    &__title-wrapper{
+        @include relative-hidden;
+        text-align:left;
+    }
+    &__content{
+        position: relative;
+        overflow: hidden;
+        padding-right: em(20);
+        max-height: 0;
+        transition: max-height 0.35s ease;
+        max-width: min(100%, 84ch);
+        text-align: left;
+    }
+}
+
+.accordion__title-wrapper:hover{
+    cursor: pointer;
+    .accordion__icon-wrapper{
+        span{
+            svg{
+                path{
+                    fill:$clr-secondary;
+                }
+            }
+        }
+    }
+}
+
+.accordion__title-wrapper.active{
+    .accordion__title{
+        color: $clr-primary;
+        &::after{
+            content:"-";
+        }
+    }
+}

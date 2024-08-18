@@ -1,0 +1,74 @@
+@use '../abstract/functions' as *;
+@use '../abstract/breakpoints' as *;
+@use '../abstract/mixins' as *;
+@use '../abstract/colors' as *; 
+@use '../abstract/fonts' as *;
+
+// ======================= marque-banner =============================
+.marquee-container{
+    position: relative;
+    overflow:hidden;
+    width:100%;
+    background: $clr-tertiary;
+}
+
+.marquee-text-wrapper{
+    display: flex;
+    // align-items: center;
+    gap:16px;
+}
+
+.marquee-text{
+    color:$clr-white;
+    text-transform: uppercase;
+}
+
+.marquee-banner {
+    position: relative;
+    @include flex-center-vertical;
+    overflow: hidden;
+    transition: animation 250ms linear;
+    padding-block: em(32);
+
+    &__track{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: rem(128);
+        white-space: nowrap;
+        animation: marquee-moving  10s linear infinite;
+
+        @include breakpoint-sm{
+            gap: rem(144);
+        }
+        @include breakpoint-md{
+            gap: rem(160);
+        }
+        @include breakpoint-lg{
+            gap: rem(200);
+        }
+        @include breakpoint-xl{
+            gap: rem(260);
+        }
+        @include breakpoint-xxl{
+            gap: rem(320);
+        }
+    }
+}
+
+@keyframes marquee-moving {
+    from {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    to {
+        -webkit-transform: translateX(-25%);
+        transform: translateX(-25%);
+    }
+}
+
+
+.marquee-icon{
+    flex-shrink: 0;
+}

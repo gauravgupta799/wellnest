@@ -1,0 +1,55 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+.hamburger{
+    position: relative;
+    transition-duration: 0.5s;
+    @include flex-center;
+    gap:rem(32);
+    .bar{
+      @include bar(2px, 25px);
+      right: 0;
+
+      @include breakpoint-sm{
+        @include bar(2px, 25px);
+      } 
+      &::before{
+        @include bar-before(2px, 25px, -8px);
+
+        @include breakpoint-sm{
+          @include bar-before(2px, 25px, -8px);
+        }
+      }
+      &::after{
+        @include bar-before(2px, 34px, 8px);
+        right: 0;
+      }
+    }
+    .bar-white{
+        background: $clr-primary;
+        &::before, &::after{
+          background: $clr-primary;
+        }
+        &.sticky{
+            background-color:$clr-white-100;
+            &::before, &::after{
+              background-color:$clr-white-100;
+            }
+        }
+    }
+    .menu__text-1{
+      display: none;
+      @include transition(0.5s, ease-out);
+      @include breakpoint-md{
+        display: block;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+}
+  

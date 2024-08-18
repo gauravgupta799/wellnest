@@ -1,0 +1,60 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+.loader-container{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: $clr-secondary;
+    z-index: 10000;
+    @include flex-center;
+}
+
+// .loader {
+//     position: relative;
+//     width: 8px;
+//     height: 40px;
+//     border-radius: 4px;
+//     display: block;
+//     background-color: $clr-secondary;
+//     margin: 20px auto;
+//     color: $clr-secondary;
+//     animation: animloader 0.3s 0.3s linear infinite alternate;
+//     border-radius: 4px;
+//     height: 50px;
+//     width: 5px;
+//     transform: rotate(-45deg);
+// }
+
+// .loader::after,
+// .loader::before {
+//     content: '';
+//     width: 5px;
+//     height: 50px;
+//     border-radius: 4px;
+//     background: $clr-secondary;
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     left: 20px;
+//     animation: animloader 0.3s 0.45s linear infinite alternate;
+// }
+
+// .loader::before {
+//     left: -20px;
+//     animation-delay: 0s;
+// }
+
+// @keyframes animloader {
+//     0% {
+//         height: 48px;
+//     }
+//     100% {
+//         height: 4px;
+//     }
+// }

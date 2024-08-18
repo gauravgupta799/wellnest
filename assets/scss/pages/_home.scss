@@ -1,0 +1,180 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+
+.hero{
+    position: relative;
+    &__inner{
+        position: relative;
+        background: $clr-primary;
+        height: 85dvh;
+        @include flex-center;
+        @include breakpoint-sm{
+            height: 70dvh; 
+        }
+    }
+    &__subTitle{
+        width: min(100%, 52ch);
+    }
+}
+
+.hero-container{
+    position: absolute;
+    bottom:0;
+}
+
+.hero-card{
+    position: absolute;
+    bottom:0;
+    right: 0;
+    width: rem(256);
+    padding:em(16);
+    border-top-left-radius:26px;
+    background-color: $clr-tertiary;
+    @include breakpoint-sm{
+        width: rem(304);
+        padding:em(20);
+    }
+    @include breakpoint-md{
+        width: rem(345);
+        padding:em(24);
+    }
+    &__header{
+        display: flex;
+        flex-direction: column;
+        span{
+            color:$clr-primary;
+        }
+        .name{
+            font-family:$ff-tertiary;
+            font-size: rem(16);
+            @include breakpoint-sm{
+                font-size: rem(18);
+            }
+            @include breakpoint-md{
+                font-size: rem(20);
+            }
+        }
+        .designation{
+            font-size: rem(14);
+            font-family: $ff-secondary;
+            @include breakpoint-sm{
+                font-size: rem(16);
+            }
+        }
+    }
+}
+
+
+// ==== Insurance Plans ====
+.insurance-plans{
+    .card-text{
+        font-size: rem(16);
+        line-height: 1.5;
+    }
+    small{
+        font-size: rem(14);
+        line-height: 1.71;
+    }
+}
+
+
+// ==============
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(rem(270), 1fr));
+    gap: rem(64) rem(24);
+    @include breakpoint-xl{
+        grid-template-columns: repeat(auto-fill, minmax(rem(224), 1fr));
+        gap: rem(36);
+    }
+    @include breakpoint-xxxl{
+        grid-template-columns: repeat(auto-fill, minmax(rem(312), 1fr));
+        gap: rem(36);
+    }
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+}
+
+.card__body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:em(22) em(12);
+    border: solid 1px #d8d8d8;
+    flex-grow: 1;
+}
+
+
+// ======= Steps
+.steps{
+    &__content{
+        display: flex;
+        gap:rem(16);
+        @include breakpoint-sm{
+            gap:rem(32);
+        }
+    }
+    &__subTitle{
+        font-size: rem(16);
+        line-height: 1.5;
+    }
+
+}
+
+
+.testimonials-card{
+    background: $clr-tertiary;
+    padding:em(24) em(16);
+    @include border-radius(8px);
+
+    @include breakpoint-sm{
+        padding:em(24);
+    }
+
+    &__header{
+        @include flex-center-vertical;
+        gap:rem(16);
+
+        figure{
+            @include dimensions(rem(54), rem(54));
+            @include border-radius(50%);
+            background: $clr-primary;
+            flex-shrink: 0;
+        }
+    }
+
+    .testimonials-desc{
+        font-size: rem(16);
+        line-height: 1.5;
+        color:$clr-black;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// .grid-container{
+//     display: grid;
+//     grid-template-columns: repeat(5, 1fr);
+//     grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+//     gap: rem(40);
+// }
+
+// .grid-item{
+//     flex: 1 1 calc(20% - 40px);
+// }

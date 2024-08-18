@@ -1,0 +1,162 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+// ================================
+.header{
+    // position: fixed; 
+    position: sticky;
+    z-index: 9;
+    top:0;
+    left: 0;
+    width: 100%;
+    transform:translateY(0);
+    background: $clr-white;
+}
+
+// ================================
+.header-top{
+    background: $clr-white;
+    padding-block:em(16);
+    display: none;
+    @include breakpoint-xl{
+        display: block;
+    }
+
+    &__container{
+        @include flex-center-vertical;
+        @include breakpoint-xl{
+            gap:1.5rem;
+        }
+        @include breakpoint-xxl{
+            gap:2rem;
+        }
+        @include breakpoint-xxxl{
+            gap:3rem;
+        }
+    }
+
+    &__left{
+        .box{
+            @include flex-center-vertical;
+            gap: rem(16);
+            span{
+                color:$clr-black;
+                font-size: rem(14);
+                line-height: 2;
+                font-style: italic;
+                @media only screen and (min-width:em(1366)){
+                    font-size: rem(16);
+                }
+            }
+        }
+    }
+}
+
+.header-desktop{
+    transition:all 0.25s ease;
+    padding-block:em(16);
+}
+
+
+.header{
+    &__inner-desktop{
+        position: relative;
+        @include flex-center-vertical;
+        justify-content: space-between;
+        transition: transform 0.25s ease;
+    }
+
+    &__right{
+        @include flex-center-vertical;
+        gap:rem(20);
+        @include breakpoint-xxl{
+            gap:rem(32);
+        }
+
+        display: none;
+        @include breakpoint-lg{
+            display: flex;
+        }
+    }
+
+    &__mobile{
+        @extend .header__inner-desktop;
+        display: flex;
+        padding:em(16);
+        margin-top: 16px;
+        @include breakpoint-lg{
+            display: none;
+        }
+    }
+}
+
+.h-call-title{
+    text-transform: lowercase;
+    font-family: $ff-secondary;
+    font-size: rem(14);
+    &::first-letter{
+        text-transform: uppercase;
+    }
+    @include breakpoint-xl{
+        font-size: rem(16);
+    }
+}
+
+.h-call-text{
+    font-size: rem(18);
+    font-weight: 800;
+    line-height: 1.2;
+    font-family: $ff-primary;
+    @include breakpoint-xl{
+        font-size: rem(20);
+    }
+    @include breakpoint-xxl{
+        font-size: rem(22);
+    }
+    @include breakpoint-xxxl{
+        font-size: rem(24);
+    }
+}
+// ================================
+
+
+// ================================
+.header-desktop.sticky{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+
+// ========== hamburger =============
+.hamburger-wrapper{
+    cursor: pointer;
+    display: flex;
+    @include breakpoint-lg{
+        display: none;
+    }
+}
+
+.h-call-btn-mobile{
+    display: flex;
+    @include breakpoint-lg{
+        display: none;
+    }
+
+    @media (max-width:em(576)){
+        .h-call-title{
+            font-size: rem(14);
+        }
+        .h-call-text{
+            font-size: rem(16);
+        }
+    }
+}
+
+
+#close-form-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+ }

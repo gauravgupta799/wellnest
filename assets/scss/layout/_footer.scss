@@ -1,0 +1,231 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.footer{
+    background: $clr-tertiary;
+    &__link-title{
+        color:$clr-black;
+        font-family: $ff-primary;
+        font-size: rem(20);
+        font-weight: 600;
+        line-height: 2.8;
+        display: inline-flex;
+    }
+    &__link{
+        position: relative;
+        overflow: hidden;
+        font-size: rem(16);
+        line-height: 1.85;
+        text-transform: capitalize;
+        @include link-hover-effect($clr-black, $clr-secondary);
+
+        address{
+            @extend .footer__link;
+            color:$clr-black;
+            font-family: $ff-secondary;
+            font-weight: 300;
+            display: inline-flex;
+            line-height: 1.65;
+        }
+
+        &:hover{
+            background-position: 0 0;
+        }
+    }
+    &__bottom-right{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap:rem(16);
+        @include breakpoint-lg{
+            flex-direction: row;
+            align-items: center;
+        }
+        @include breakpoint-xl{
+           flex-wrap: nowrap;
+        }
+        @include breakpoint-xxl{
+            gap:rem(32);
+        }
+    }
+}
+
+.connect-wrapper{
+    p{
+        color:$clr-white;
+    }
+}
+
+.socials-list {
+    list-style: none;
+    display: flex;
+    gap:0.75rem;
+    @include breakpoint-xl{
+        margin-left: 0;
+        justify-content: flex-end;
+    }
+    &--mobile{
+        .socials-link{
+            background: $clr-secondary;
+            transition:all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+            &:hover{
+                cursor: pointer;
+                background: $clr-white;
+                svg path{
+                    fill: $clr-primary;
+                }
+            } 
+        }
+    }
+}
+
+.socials-item{
+    @include relative-hidden;
+}
+
+.socials-link{
+    @include relative-hidden;
+    @include flex-center; 
+    @include border-radius(4px);
+    // @include dimensions(rem(40), rem(40));
+    background: $clr-primary;
+    padding:em(10);
+    transition:all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    z-index: 1;
+    span{
+        display: flex;
+    }
+    // &::before{
+    //     content:"";
+    //     position: absolute;
+    //     @include full-dimensions;
+    //     background: $clr-secondary;
+    //     clip-path: circle(0.0% at 50% 100%);
+    //     transition:clip-path 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    //     z-index: -1;
+    // }
+
+    &:hover{
+        cursor: pointer;
+        background: $clr-secondary;
+        // &::before{
+        //     clip-path: circle(50% at 50% 50%);
+        // }
+    } 
+
+}
+
+
+.view-on-map-text{
+    color: $clr-secondary;
+    display: inline-flex;
+    text-decoration: underline;
+    transition: all .35s ease;
+    font-size: rem(16);
+    line-height: 1.5;
+    font-style: italic;
+    text-decoration: underline;
+    @include link-hover-effect($clr-secondary, $clr-primary);
+    &:hover{
+        background-position:  0 0;
+    }
+}
+
+.cities-list{
+    @include flex-center-vertical;
+    flex-wrap: wrap;
+    li{
+      white-space: nowrap;
+      margin-right: rem(10);
+    }
+
+    .cities-link{
+        position: relative;
+        font-size: rem(16);
+        line-height: 1.5;
+        @include link-hover-effect($clr-secondary, $clr-primary);
+        &::after{
+            content: "/";
+            margin-left: rem(6);
+            color:$clr-white;
+        }
+        &:hover{
+            cursor: pointer;
+            background-position: 0 0;
+        }
+    }
+}
+
+
+
+
+
+
+// .certfied-list{
+//     @include relative-hidden;
+//     @include flex-center-vertical;
+//     flex-wrap: wrap;
+//     gap: 16px;
+//     @include breakpoint-sm{
+//         gap:22px;
+//     }
+//     @include breakpoint-md{
+//         gap:28px;
+//     }
+//     @include breakpoint-lg{
+//         gap:32px;
+//     }
+//     &__item {
+//         @include flex-center-vertical;
+//         gap: 10px;
+//         @include breakpoint-sm{
+//             gap: 14px;
+//         }
+//         span{
+//             font-size: 16px;
+//             line-height: 1.56;
+
+//             @include breakpoint-xxl{
+//                 font-size: 18px;
+//             }
+//         }
+//     }
+// }
+
+
+// .grid-container{
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: rem(64);
+
+//     @include breakpoint-sm{
+//         grid-template-columns: repeat(3, 1fr);
+//        gap: rem(64);
+//     }
+//     @include breakpoint-xl{
+//         gap: rem(80);
+//         grid-template-columns: repeat(4, 1fr);
+//     }
+// }
+
+// .steps-grid-container{
+//     display: grid;
+//     grid-template-columns: repeat(1, 1fr);
+//     gap: rem(64);
+
+//     @include breakpoint-sm{
+//         grid-template-columns: repeat(2, 1fr);
+//         gap: rem(32);
+//     }
+//     @include breakpoint-lg{
+//         grid-template-columns: repeat(3, 1fr);
+//         gap: rem(16);
+//     }
+//     @include breakpoint-xl{
+//         grid-template-columns: repeat(4, 1fr);
+//     }
+// }
