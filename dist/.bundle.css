@@ -714,20 +714,14 @@ button.swiper-pagination-bullet {
 --------------------------------------------------*/
 @font-face {
   font-family: "Figtree-SemiBold";
-  src: url("../../../assets/fonts/Figtree/Figtree-SemiBold.woff2");
-  src: url("../../../assets/fonts/Figtree/Figtree-SemiBold.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Figtree/Figtree-SemiBold.woff2") format("woff2"), url("../../../assets/fonts/Figtree/Figtree-SemiBold.woff") format("woff"), url("../../../assets/fonts/Figtree/Figtree-SemiBold.ttf") format("truetype"), url("../../../assets/fonts/Figtree/Figtree-SemiBold.svg#Figtree-SemiBold") format("svg");
+  src: url("../assets/fonts/Figtree/Figtree-SemiBold.woff2");
+  src: url("../assets/fonts/Figtree/Figtree-SemiBold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Figtree/Figtree-SemiBold.woff2") format("woff2"), url("../assets/fonts/Figtree/Figtree-SemiBold.woff") format("woff"), url("../assets/fonts/Figtree/Figtree-SemiBold.ttf") format("truetype"), url("../assets/fonts/Figtree/Figtree-SemiBold.svg#Figtree-SemiBold") format("svg");
   font-weight: 600;
 }
 @font-face {
-  font-family: "Matter-Regular";
-  src: url("../../../assets/fonts/Matter/Matter-Regular.woff2");
-  src: url("../../../assets/fonts/Matter/Matter-Regular.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Matter/Matter-Regular.woff2") format("woff2"), url("../../../assets/fonts/Matter/Matter-Regular.woff") format("woff"), url("../../../assets/fonts/Matter/Matter-Regular.ttf") format("truetype"), url("../../../assets/fonts/Matter/Matter-Regular.svg#Matter-Regular") format("svg");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Sora-Regular";
-  src: url("../../../assets/fonts/Sora/Sora-Regular.woff2");
-  src: url("../../../assets/fonts/Sora/Sora-Regular.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Sora/Sora-Regular.woff2") format("woff2"), url("../../../assets/fonts/Sora/Sora-Regular.woff") format("woff"), url("../../../assets/fonts/Sora/Sora-Regular.ttf") format("truetype"), url("../../../assets/fonts/Sora/Sora-Regular.svg#Sora-Regular") format("svg");
+  font-family: "Figtree-Regular";
+  src: url("../../../assets/fonts/Figtree/Figtree-Regular.eot");
+  src: url("../../../assets/fonts/Figtree/Figtree-Regular.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Figtree/Figtree-Regular.woff2") format("woff2"), url("../../../assets/fonts/Figtree/Figtree-Regular.woff") format("woff"), url("../../../assets/fonts/Figtree/Figtree-SemiBold.ttf") format("truetype"), url("../../../assets/fonts/Figtree/Figtree-Regular.svg#Figtree-Regular") format("svg");
   font-weight: 400;
 }
 /*-----------------------------
@@ -777,13 +771,13 @@ html {
 
 ::-moz-placeholder {
   font-size: 1rem !important;
-  font-family: "Matter-Regular", sans-serif !important;
+  font-family: "Figtree-Regular", sans-serif !important;
   color: #03256c;
 }
 
 ::placeholder {
   font-size: 1rem !important;
-  font-family: "Matter-Regular", sans-serif !important;
+  font-family: "Figtree-Regular", sans-serif !important;
   color: #03256c;
 }
 
@@ -798,7 +792,7 @@ html {
 }
 
 body {
-  font-family: "Matter-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   color: #000000;
   line-height: 1.4;
   font-size: 1.125rem;
@@ -889,7 +883,7 @@ button {
   border: none;
   outline: none;
   background: none;
-  font-family: "Figtree-SemiBold", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   cursor: pointer;
 }
 
@@ -909,8 +903,8 @@ label {
 }
 
 h1 {
-  font-size: 2.25rem;
-  line-height: 2.25rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 @media screen and (min-width: 36em) {
   h1 {
@@ -1166,9 +1160,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 
 p, ul, ol, body {
-  font-size: 1.125rem;
-  line-height: 1.625rem;
-  font-family: "Matter-Regular", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Figtree-Regular", sans-serif;
   color: #000000;
   line-height: 1.4;
 }
@@ -1304,6 +1298,10 @@ p, ul, ol, body {
 
 .list-none {
   list-style: none;
+}
+
+.pos-relative {
+  position: relative;
 }
 
 .fz-16 {
@@ -13037,7 +13035,7 @@ p, ul, ol, body {
   border: none;
   text-transform: capitalize;
   color: #FFFFFF;
-  font-family: "Sora-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   padding: 1em 1.5em;
@@ -13082,7 +13080,7 @@ p, ul, ol, body {
 .btn--mail span {
   font-size: 14px;
   line-height: 1.78;
-  font-family: "Matter-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   text-decoration: underline;
   text-decoration-color: #FFFFFF;
   text-transform: lowercase;
@@ -13173,34 +13171,6 @@ p, ul, ol, body {
   background-position: 0 0;
 }
 
-/* Base Styling */
-/* Animate phone */
-@keyframes header-phone {
-  0%, 30% {
-    opacity: 0;
-    transform: translate3d(-20px, 20px, 0);
-  }
-  80% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes header-phone2 {
-  0% {
-    opacity: 0;
-    transform: translate3d(-20px, 20px, 0);
-  }
-  70%, 90% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    opacity: 0;
-  }
-}
 .form-container {
   max-width: 100%;
   margin: 0 auto;
@@ -13235,7 +13205,7 @@ p, ul, ol, body {
   width: 100%;
   background: #FFFFFF;
   color: #08225a;
-  font-family: "Matter-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   caret-color: #f39237;
   font-size: 1rem;
   line-height: 1.75;
@@ -13253,7 +13223,7 @@ p, ul, ol, body {
 .form__label {
   pointer-events: none;
   text-transform: capitalize;
-  font-family: "Matter-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   font-size: 1rem;
   line-height: 1.75;
   display: inline-block;
@@ -13323,7 +13293,7 @@ p, ul, ol, body {
   font-size: 1rem;
   line-height: 1.78;
   text-transform: capitalize;
-  font-family: "Matter-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
 }
 @media only screen and (min-width: 62em) {
   .nav__link {
@@ -13494,7 +13464,7 @@ p, ul, ol, body {
   font-size: 1rem;
   line-height: 1.15;
   padding: 1em;
-  font-family: "Matter-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   transform: translateY(50px);
   transition: transform 0.2s ease;
   transition-duration: 0.5s;
@@ -13678,22 +13648,42 @@ p, ul, ol, body {
 
 .hero {
   position: relative;
+  background: #03256c;
+  height: 85dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+@media only screen and (min-width: 36em) {
+  .hero {
+    height: 60dvh;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .hero {
+    height: 70dvh;
+  }
 }
 .hero__inner {
   position: relative;
   background: #03256c;
-  height: 85dvh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-@media only screen and (min-width: 36em) {
-  .hero__inner {
-    height: 70dvh;
-  }
-}
 .hero__subTitle {
   width: min(100%, 52ch);
+}
+
+.hero-span {
+  position: relative;
+}
+.hero-span::after {
+  content: url("../assets/images/line-orange.svg");
+  position: absolute;
+  left: 0;
+  bottom: -10px;
 }
 
 .hero-container {
@@ -13730,7 +13720,7 @@ p, ul, ol, body {
   color: #03256c;
 }
 .hero-card__header .name {
-  font-family: "Sora-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   font-size: 1rem;
 }
 @media only screen and (min-width: 36em) {
@@ -13745,7 +13735,7 @@ p, ul, ol, body {
 }
 .hero-card__header .designation {
   font-size: 0.875rem;
-  font-family: "Matter-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
 }
 @media only screen and (min-width: 36em) {
   .hero-card__header .designation {
@@ -13933,7 +13923,7 @@ p, ul, ol, body {
 
 .h-call-title {
   text-transform: lowercase;
-  font-family: "Matter-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   font-size: 0.875rem;
 }
 .h-call-title::first-letter {
@@ -13993,8 +13983,10 @@ p, ul, ol, body {
   .h-call-btn-mobile .h-call-title {
     font-size: 0.875rem;
   }
-  .h-call-btn-mobile .h-call-text {
-    font-size: 1rem;
+}
+@media (max-width: 30em) {
+  .h-call-btn-mobile .h-call-title {
+    font-size: 0.75rem;
   }
 }
 
@@ -14031,7 +14023,7 @@ p, ul, ol, body {
 }
 .footer__link address {
   color: #000000;
-  font-family: "Matter-Regular", sans-serif;
+  font-family: "Figtree-Regular", sans-serif;
   font-weight: 300;
   display: inline-flex;
   line-height: 1.65;

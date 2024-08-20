@@ -144,12 +144,15 @@
         display: none;
     }
 
+ 
     @media (max-width:em(576)){
         .h-call-title{
             font-size: rem(14);
         }
-        .h-call-text{
-            font-size: rem(16);
+    }
+    @media (max-width:em(480)){
+        .h-call-title{
+            font-size: rem(12);
         }
     }
 }

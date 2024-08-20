@@ -8,17 +8,37 @@
 
 .hero{
     position: relative;
+    background: $clr-primary;
+    height: 85dvh;
+    @include flex-center-horizontal;
+    align-items: flex-end;
+    @include breakpoint-sm{
+        height: 60dvh;
+    }
+    @include breakpoint-xl{
+        height: 70dvh;
+    }
     &__inner{
         position: relative;
         background: $clr-primary;
-        height: 85dvh;
+        height: 100dvh;
         @include flex-center;
-        @include breakpoint-sm{
-            height: 70dvh; 
-        }
+        // @include breakpoint-sm{
+        //     height: 70dvh; 
+        // }
     }
     &__subTitle{
         width: min(100%, 52ch);
+    }
+}
+
+.hero-span{
+    position: relative;
+    &::after{
+        content:url("../assets/images/line-orange.svg");
+        position: absolute;
+        left: 0;
+        bottom: -10px;
     }
 }
 
@@ -50,7 +70,7 @@
             color:$clr-primary;
         }
         .name{
-            font-family:$ff-tertiary;
+            font-family:$ff-secondary;
             font-size: rem(16);
             @include breakpoint-sm{
                 font-size: rem(18);

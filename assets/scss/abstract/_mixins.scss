@@ -132,13 +132,13 @@
 }
 
 
-// @mixin caret-down{
-//     content:"";
-//     position: absolute;
-//     right: 1rem;
-//     top: 55%;
-//     pointer-events: none;
-//     border-left: 0.35rem solid transparent;
-//     border-right: 0.35rem  solid transparent;
-//     border-top: 0.35rem solid $clr-primary;
-// }
+@mixin caret-down{
+    content:"";
+    position: absolute;
+    right: 1rem;
+    top: 55%;
+    pointer-events: none;
+    border-left: 0.35rem solid transparent;
+    border-right: 0.35rem  solid transparent;
+    border-top: 0.35rem solid $clr-primary;
+}

@@ -13,7 +13,7 @@
     border:none;
     text-transform: capitalize;
     color:$clr-white;
-    font-family: $ff-tertiary;
+    font-family: $ff-secondary;
     font-size:rem(16);
     line-height: 1.5;
     padding:em(16) em(24);
@@ -138,60 +138,5 @@
         span{
             background-position: 0 0;
         }
-    }
-}
-
-
-
-/* Base Styling */
-// .h-phone-btn svg {
-//     width:30px;
-//     height:30px;
-// }
-// .h-phone-btn svg path {
-//     fill:#aa2424;
-// }
-// .h-phone-btn svg path:nth-child(1) {
-//     fill:none;
-//     stroke-width:4px;
-//     stroke:#aa2424;
-// }
-// .h-phone-btn svg path:nth-child(2) {
-//     animation: header-phone 1.5s infinite cubic-bezier(.1, .57, .5, 1);
-// }
-// .h-phone-btn svg path:nth-child(3) {
-//     animation:header-phone2 1.5s infinite cubic-bezier(.1, .57, .5, 1);
-// }
-  
-  
-  
-  
-  /* Animate phone */
-  
-@keyframes header-phone {
-    0%,30%{
-        opacity:0;
-        transform:translate3d(-20px, 20px, 0);
-    }
-    80%{
-          opacity:1;
-          transform:translate3d(0, 0, 0);
-    }
-    100%{
-        opacity:0
-    }
-}
-
-@keyframes header-phone2 {
-    0%{
-        opacity:0;
-        transform:translate3d(-20px, 20px, 0);
-    }
-    70%,90% {
-        opacity:1; 
-        transform:translate3d(0, 0, 0);
-    }
-    100%{
-        opacity:0
     }
 }
