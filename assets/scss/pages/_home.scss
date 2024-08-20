@@ -34,11 +34,16 @@
 
 .hero-span{
     position: relative;
+
     &::after{
         content:url("../assets/images/line-orange.svg");
         position: absolute;
         left: 0;
         bottom: -10px;
+        display: none;
+        @include breakpoint-sm{
+            display: flex;
+        }
     }
 }
 
@@ -51,18 +56,10 @@
     position: absolute;
     bottom:0;
     right: 0;
-    width: rem(256);
+    width: min(85%, rem(345));
     padding:em(16);
     border-top-left-radius:26px;
     background-color: $clr-tertiary;
-    @include breakpoint-sm{
-        width: rem(304);
-        padding:em(20);
-    }
-    @include breakpoint-md{
-        width: rem(345);
-        padding:em(24);
-    }
     &__header{
         display: flex;
         flex-direction: column;

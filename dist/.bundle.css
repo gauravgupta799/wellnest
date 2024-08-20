@@ -13684,6 +13684,12 @@ p, ul, ol, body {
   position: absolute;
   left: 0;
   bottom: -10px;
+  display: none;
+}
+@media only screen and (min-width: 36em) {
+  .hero-span::after {
+    display: flex;
+  }
 }
 
 .hero-container {
@@ -13695,22 +13701,10 @@ p, ul, ol, body {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 16rem;
+  width: min(85%, 21.5625rem);
   padding: 1em;
   border-top-left-radius: 26px;
   background-color: #f6f6f6;
-}
-@media only screen and (min-width: 36em) {
-  .hero-card {
-    width: 19rem;
-    padding: 1.25em;
-  }
-}
-@media only screen and (min-width: 48em) {
-  .hero-card {
-    width: 21.5625rem;
-    padding: 1.5em;
-  }
 }
 .hero-card__header {
   display: flex;
