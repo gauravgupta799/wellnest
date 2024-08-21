@@ -14,12 +14,13 @@
     width: 100%;
     transform:translateY(0);
     background: $clr-white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
 }
 
 // ================================
 .header-top{
     background: $clr-white;
-    padding-block:em(16);
+    padding-block:em(12);
     display: none;
     @include breakpoint-xl{
         display: block;
@@ -57,7 +58,7 @@
 
 .header-desktop{
     transition:all 0.25s ease;
-    padding-block:em(16);
+    padding-block:em(14);
 }
 
 

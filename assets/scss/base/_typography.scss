@@ -37,7 +37,7 @@ $h1-font-sizes: (
 );
 
 $h2-font-sizes:(
-  null:(rem(32), rem(35)), 
+  null:(rem(28), rem(32)), 
   sm:(rem(32), rem(35)),
   md:(rem(36), rem(39)),
   lg:(rem(40), rem(44)), 
@@ -47,7 +47,7 @@ $h2-font-sizes:(
 );
 
 $h3-font-sizes: (
-  null:(rem(28), rem(40)), 
+  null:(rem(26), rem(36)), 
   sm:(rem(28), rem(40)),
   md:(rem(32), rem(44)),
   lg:(rem(36), rem(50)),
@@ -57,7 +57,7 @@ $h3-font-sizes: (
 );
 
 $h4-font-sizes: (
-  null:(rem(26), rem(36)), 
+  null:(rem(24), rem(32)), 
   sm :(rem(26), rem(36)),
   md :(rem(28), rem(40)),
   lg :(rem(32), rem(44)),
@@ -67,7 +67,7 @@ $h4-font-sizes: (
 );
 
 $h5-font-sizes: (
-  null:(rem(24), rem(34)), 
+  null:(rem(22), rem(30)), 
   sm :(rem(24), rem(34)),
   md :(rem(24), rem(34)),
   lg :(rem(24), rem(34)),

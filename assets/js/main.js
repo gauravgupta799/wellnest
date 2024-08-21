@@ -207,56 +207,33 @@ if(hamburgerBtn){
 
 
 // ============ Swipers Start =================
-const swiperServices = new Swiper('.services-swiper', {
-    slidesPerView: 1,
-    grabCursor: true,
-    // loop:true,
-    spaceBetween:54,
-    navigation: {
-        prevEl: '#swiper-prev-btn',
-        nextEl: '#swiper-next-btn',
-    },
-    breakpoints: {
-        500: {
-            slidesPerView: 2,
-            spaceBetween:48,
-        },
-        768: {
-            slidesPerView: 2.2,
-        },
-        992: {
-            slidesPerView: 3,
-        },
-        1366: {
-            slidesPerView: 4,
-            spaceBetween:40,
-        },
-        1600:{
-            slidesPerView: 4,
-            spaceBetween:48,
-        },
-    }
-});
+// const swiperTimelineBody = new Swiper('.story-timeline__body', {
+//     slidesPerView: 1,
+//     direction: "horizontal",
+//     spaceBetween: 30,
+//     loop:true,
+//     grabCursor: true,
+// });
 
-const swiperJourney = new Swiper('.journey-slider-container', {
-    slidesPerView: 1.5,
-    grabCursor: true,
-    spaceBetween:20,
-    breakpoints: {
-        500: {
-            slidesPerView: 2.3,
-        },
-        768: {
-            slidesPerView: 2.5,
-        },
-        992: {
-            slidesPerView: 3.5,
-        },
-        1280: {
-            slidesPerView: 4,
-        },
-    }
-});
+// const swiperJourney = new Swiper('.journey-slider-container', {
+//     slidesPerView: 1.5,
+//     grabCursor: true,
+//     spaceBetween:20,
+//     breakpoints: {
+//         500: {
+//             slidesPerView: 2.3,
+//         },
+//         768: {
+//             slidesPerView: 2.5,
+//         },
+//         992: {
+//             slidesPerView: 3.5,
+//         },
+//         1280: {
+//             slidesPerView: 4,
+//         },
+//     }
+// });
 // ============ Swipers End =================
 
 
@@ -350,7 +327,7 @@ mobileSubmenu && mobileSubmenu.forEach((submenu)=>{
 // ========== Counter script start ============
 const counterSections = document.querySelectorAll(".counter-section");
 counterSections && counterSections.forEach((counterSection)=>{
-    const counters = counterSection.querySelectorAll(".counter-number");
+    const counters = counterSection.querySelectorAll(".count-value");
     if(counters.length > 0) {
         let CounterObserver = new IntersectionObserver(
             (entries, observer)=>{

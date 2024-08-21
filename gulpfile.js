@@ -11,7 +11,7 @@ const browserSync = require('browser-sync').create();
 
 const cssFilesArray = [
     "assets/vendors/lenis/lenis.css",
-    "assets/vendors/swiper/css/swiper.min.css",
+    'assets/vendors/swiper.js_5.3.7/swiper-bundle.css',
     "assets/scss/main.scss",
 ];
 
@@ -37,11 +37,11 @@ function scssTaskMinified(){
 
 // Array of javaScript files
 const jsFilesArray = [
-    "assets/vendors/lenis/lenis.min.js",
     "assets/vendors/jquery/jquery-3-6-1.min.js",
+   'assets/vendors/swiper.js_5.3.7/swiper-bundle.min.js', 
     "assets/vendors/gsap/gsap.min.js",
     "assets/vendors/gsap/scrollTrigger-3.6.1.min.js",
-    "assets/vendors/swiper/js/swiper-bundle.min.js",
+    "assets/vendors/lenis/lenis.min.js",
     "assets/js/main.js",
 ];
 

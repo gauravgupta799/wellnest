@@ -11,13 +11,20 @@
     background: $clr-primary;
     height: 85dvh;
     @include flex-center-horizontal;
-    align-items: flex-end;
+    align-items: center;
+    &--home{
+        align-items: flex-end;
+    }
+    &--about{
+        height: 60dvh;
+    }
     @include breakpoint-sm{
         height: 60dvh;
     }
     @include breakpoint-xl{
         height: 70dvh;
     }
+
     &__inner{
         position: relative;
         background: $clr-primary;
@@ -27,6 +34,7 @@
         //     height: 70dvh; 
         // }
     }
+
     &__subTitle{
         width: min(100%, 52ch);
     }
@@ -42,7 +50,7 @@
         bottom: -10px;
         display: none;
         @include breakpoint-sm{
-            display: flex;
+            display: block;
         }
     }
 }
@@ -177,21 +185,48 @@
 
 
 
+.counter{
+    @include flex-center;
+    font-size: clamp(rem(28), 4vw + 1rem, rem(52));
+    line-height: 1.08;
+    font-family: $ff-primary;
+}
+
+.distinctive-card{
+    max-width: 80%;
+    margin: 0 auto;
+}
 
 
+.story-timeline{
+    background: $clr-white;
+    clip-path: ellipse(50% 40% at 50% 85%);
+    display: grid;
+    place-items: center;
+    width: min(100%, rem(950));
+    height: 700px;
+    padding:1em;
+    margin-top: -15rem;
+    &__year{
+        color:$clr-black;
+        font-size: rem(24);
+        font-family: $ff-primary;
+        @include breakpoint-sm{
+            font-size: rem(28);
+        }
+        @include breakpoint-md{
+            font-size: rem(32);
+        }
+    }
 
-
-
-
-
-
-// .grid-container{
-//     display: grid;
-//     grid-template-columns: repeat(5, 1fr);
-//     grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
-//     gap: rem(40);
-// }
-
-// .grid-item{
-//     flex: 1 1 calc(20% - 40px);
-// }
+    &__body{
+        overflow: hidden;
+        p{
+            color:$clr-black;
+        }
+    }
+    &__content{
+        max-width: 48ch;
+        margin-inline: auto;
+    }
+}

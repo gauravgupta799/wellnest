@@ -35,20 +35,13 @@
             max-width: 90%;
         }
         &::after{
-            content: "+";
-            color:$clr-primary;
-            flex-shrink: 0;
+            content: url("../../../assets/icons/arrow-down.svg");
             position: absolute;
+            flex-shrink: 0;
             right: 0;
-            transition:all 0.25s ease;
-            font-size: 40px;
-            font-weight: 600;
-            @include breakpoint-sm{
-                font-size: 44px;
-            }
-            @include breakpoint-md{
-                font-size: 48px;
-            }
+            transition:transform 0.25s ease;
+            transform: translateY(0) rotate(0deg);
+            transform-origin: center;
         }
         &:hover{
             color: $clr-primary;
@@ -92,7 +85,7 @@
     .accordion__title{
         color: $clr-primary;
         &::after{
-            content:"-";
+            transform: translateY(6px) rotate(180deg);
         }
     }
 }
