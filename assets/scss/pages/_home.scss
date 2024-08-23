@@ -126,6 +126,12 @@
 .card{
     display: flex;
     flex-direction: column;
+
+    .card-img{
+        @media screen  and (max-width: em(992)) {
+            width: 100%;   
+        }
+    }
 }
 
 .card__body{
@@ -139,6 +145,21 @@
 
 
 // ======= Steps
+.steps-desc-container{
+    position: relative;
+    z-index: 1;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 2px;
+        height: 90%;
+        transform: translate(25px, 5px);
+        background-image: repeating-linear-gradient(180deg,transparent,transparent 6px, $clr-secondary 0, $clr-secondary 14px);
+        z-index: -1;
+    }
+}
+
 .steps{
     &__content{
         display: flex;
@@ -151,7 +172,10 @@
         font-size: rem(16);
         line-height: 1.5;
     }
+}
 
+.last{
+    background: $clr-white;
 }
 
 
@@ -183,8 +207,6 @@
     }
 }
 
-
-
 .counter{
     @include flex-center;
     font-size: clamp(rem(28), 4vw + 1rem, rem(52));
@@ -197,25 +219,63 @@
     margin: 0 auto;
 }
 
-
 .story-timeline{
-    background: $clr-white;
-    clip-path: ellipse(50% 40% at 50% 85%);
-    display: grid;
-    place-items: center;
-    width: min(100%, rem(950));
-    height: 700px;
+    position: relative;
+    // display: grid;
+    // place-items: center;
+    // width: min(100%, rem(950));
+    // height: rem(400);
     padding:1em;
-    margin-top: -15rem;
+    z-index: 1;
+    // background: white;
+    // clip-path: ellipse(50% 40% at 50% 85%);
+
+    &::before{
+        content:"";
+        position: absolute;
+        width: min(100%, rem(950));
+        height: rem(700);
+        left: 0;
+        bottom: 0;
+        background: $clr-white;
+        clip-path: ellipse(50% 40% at 50% 85%);
+        z-index: -1;
+    }
+
     &__year{
-        color:$clr-black;
-        font-size: rem(24);
-        font-family: $ff-primary;
-        @include breakpoint-sm{
-            font-size: rem(28);
+        position: relative;
+        padding-block: 6px;
+        z-index: 1;
+        width: rem(120);
+        background: $clr-white;
+
+        span{
+            color:$clr-black;
+            font-size: rem(24);
+            font-family: $ff-primary;
+            @include breakpoint-sm{
+                font-size: rem(28);
+            }
+            @include breakpoint-md{
+                font-size: rem(32);
+            }
         }
-        @include breakpoint-md{
-            font-size: rem(32);
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 44%;
+            right: -70px;
+            width: 65%;
+            height: 2px;
+            background-image: repeating-linear-gradient(
+                to right,
+                black 0,
+                black 8px, /* Dot size */
+                transparent 2px,
+                transparent 14px /* Space between dots */
+            );
+            z-index: -1;
         }
     }
 
@@ -225,8 +285,25 @@
             color:$clr-black;
         }
     }
+
     &__content{
         max-width: 48ch;
         margin-inline: auto;
     }
+
+    &__header{
+        width: min(100%, rem(520));
+    }
+
+    .swiper-slide-active{
+        .story-timeline__year{
+           span{
+            color:$clr-secondary;
+           }
+        }
+    }
+}
+
+.cta-hero-title{
+    max-width: 16ch;
 }

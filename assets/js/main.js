@@ -215,25 +215,57 @@ if(hamburgerBtn){
 //     grabCursor: true,
 // });
 
-// const swiperJourney = new Swiper('.journey-slider-container', {
-//     slidesPerView: 1.5,
+// const swiperTimelineBody = new Swiper('.story-timeline__body', {
+//     slidesPerView: 1,
+//     direction: "horizontal",
+//     spaceBetween: 30,
+//     loop:true,
 //     grabCursor: true,
-//     spaceBetween:20,
-//     breakpoints: {
-//         500: {
-//             slidesPerView: 2.3,
-//         },
-//         768: {
-//             slidesPerView: 2.5,
-//         },
-//         992: {
-//             slidesPerView: 3.5,
-//         },
-//         1280: {
-//             slidesPerView: 4,
-//         },
-//     }
 // });
+
+// ======== large thumbnail slider ===========
+var galleryTop = new Swiper(".gallery-top", {
+    spaceBetween: 10,
+    grabCursor: true,
+    loop: true,
+    loopedSlides: 4,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false
+    }
+  });
+  
+// ========== single property gallery img slider ==========
+var galleryThumbs = new Swiper(".gallery-thumbs", {
+    spaceBetween: 10,
+    centeredSlides: true,
+    touchRatio: 0.4,
+    slideToClickedSlide: true,
+    loop: true,
+    loopedSlides: 4,
+    slidesPerView: 2,
+    grabCursor: true,
+    breakpoints: {
+        576: {
+            slidesPerView: 3,
+        },
+    },
+    keyboard: {
+        enabled: true,
+        onlyInViewport: false
+    }
+});
+  
+/* set conteoller  */
+if( galleryTop && galleryThumbs){
+    galleryTop.controller.control = galleryThumbs;
+    galleryThumbs.controller.control = galleryTop;
+}
+
 // ============ Swipers End =================
 
 
