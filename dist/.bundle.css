@@ -13783,7 +13783,7 @@ select {
 .hero {
   position: relative;
   background: #03256c;
-  height: 85dvh;
+  height: 100dvh;
 }
 .hero--home {
   display: flex;
@@ -13795,6 +13795,9 @@ select {
 }
 .hero--blog {
   height: 50vh;
+}
+.hero--bruno {
+  height: 80vh;
 }
 @media only screen and (min-width: 36em) {
   .hero {

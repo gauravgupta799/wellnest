@@ -9,7 +9,7 @@
 .hero{
     position: relative;
     background: $clr-primary;
-    height: 85dvh;
+    height: 100dvh;
    
     &--home{
         @include flex-center-horizontal;
@@ -20,6 +20,9 @@
     }
     &--blog{
         height: 50vh;
+    }
+    &--bruno {
+        height: 80vh;
     }
 
     @include breakpoint-sm{
