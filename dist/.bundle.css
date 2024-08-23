@@ -14102,6 +14102,11 @@ select {
   max-width: 16ch;
 }
 
+.what-included-title {
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
 .header {
   position: sticky;
   z-index: 9;
