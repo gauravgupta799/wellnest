@@ -10,14 +10,18 @@
     position: relative;
     background: $clr-primary;
     height: 85dvh;
-    @include flex-center-horizontal;
-    align-items: center;
+   
     &--home{
+        @include flex-center-horizontal;
         align-items: flex-end;
     }
     &--about{
         height: 60dvh;
     }
+    &--blog{
+        height: 50vh;
+    }
+
     @include breakpoint-sm{
         height: 60dvh;
     }
@@ -25,14 +29,12 @@
         height: 70dvh;
     }
 
+
     &__inner{
         position: relative;
-        background: $clr-primary;
-        height: 100dvh;
-        @include flex-center;
-        // @include breakpoint-sm{
-        //     height: 70dvh; 
-        // }
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
 
     &__subTitle{
@@ -121,6 +123,24 @@
         grid-template-columns: repeat(auto-fill, minmax(rem(312), 1fr));
         gap: rem(36);
     }
+
+    &--blog{
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(96);
+        @include breakpoint-sm{
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(96) rem(48);
+        }
+        @include breakpoint-lg{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include breakpoint-xl{
+            gap: rem(96) rem(64);
+        }
+        @include breakpoint-xxl{
+            gap: rem(112) rem(96);
+        }
+    }
 }
 
 .card{
@@ -139,8 +159,13 @@
     flex-direction: column;
     justify-content: space-between;
     padding:em(22) em(12);
-    border: solid 1px #d8d8d8;
+    border:1px solid $clr-grey-3;
     flex-grow: 1;
+}
+
+.card-period-wrapper{
+    @include flex-center-vertical;
+    gap:rem(32);
 }
 
 
@@ -207,6 +232,8 @@
     }
 }
 
+
+// About
 .counter{
     @include flex-center;
     font-size: clamp(rem(28), 4vw + 1rem, rem(52));

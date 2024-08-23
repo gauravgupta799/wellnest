@@ -127,7 +127,7 @@
     gap:rem(8);
     padding: 0;
     span{
-        @include link-hover-effect($clr-black, $clr-secondary);
+        @include link-hover-effect($clr-secondary, $clr-primary);
     }
     svg{
         path{
@@ -137,6 +137,9 @@
     &:hover{
         span{
             background-position: 0 0;
+        }
+        svg path{
+            fill:$clr-primary;
         }
     }
 }

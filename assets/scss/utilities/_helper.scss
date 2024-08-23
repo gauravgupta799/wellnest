@@ -22,6 +22,11 @@
     list-style: none;
 }
 
+.d-flex-vertical{
+    display: flex;
+    align-items: center;
+}
+
 .txt-primary{
     color:$clr-primary;
 }

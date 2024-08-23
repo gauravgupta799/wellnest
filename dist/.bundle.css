@@ -1261,6 +1261,11 @@ p, ul, ol, body {
   list-style: none;
 }
 
+.d-flex-vertical {
+  display: flex;
+  align-items: center;
+}
+
 .txt-primary {
   color: #03256c;
 }
@@ -13193,7 +13198,7 @@ p, ul, ol, body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  background-image: linear-gradient(to bottom, #f39237, #f39237 50%, #000000 50%);
+  background-image: linear-gradient(to bottom, #03256c, #03256c 50%, #f39237 50%);
   background-position: 0 -100%;
   background-size: 100% 200%;
   transition: background-position 0.3s ease;
@@ -13203,6 +13208,9 @@ p, ul, ol, body {
 }
 .btn--transparent:hover span {
   background-position: 0 0;
+}
+.btn--transparent:hover svg path {
+  fill: #03256c;
 }
 
 .form-container {
@@ -13776,15 +13784,17 @@ select {
   position: relative;
   background: #03256c;
   height: 85dvh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .hero--home {
+  display: flex;
+  justify-content: center;
   align-items: flex-end;
 }
 .hero--about {
   height: 60dvh;
+}
+.hero--blog {
+  height: 50vh;
 }
 @media only screen and (min-width: 36em) {
   .hero {
@@ -13798,11 +13808,9 @@ select {
 }
 .hero__inner {
   position: relative;
-  background: #03256c;
-  height: 100dvh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  height: 100%;
 }
 .hero__subTitle {
   width: min(100%, 52ch);
@@ -13895,6 +13903,31 @@ select {
     gap: 2.25rem;
   }
 }
+.card-container--blog {
+  grid-template-columns: repeat(1, 1fr);
+  gap: 6rem;
+}
+@media only screen and (min-width: 36em) {
+  .card-container--blog {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem 3rem;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .card-container--blog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 75em) {
+  .card-container--blog {
+    gap: 6rem 4rem;
+  }
+}
+@media only screen and (min-width: 100em) {
+  .card-container--blog {
+    gap: 7rem 6rem;
+  }
+}
 
 .card {
   display: flex;
@@ -13911,8 +13944,14 @@ select {
   flex-direction: column;
   justify-content: space-between;
   padding: 1.375em 0.75em;
-  border: solid 1px #d8d8d8;
+  border: 1px solid #d8d8d8;
   flex-grow: 1;
+}
+
+.card-period-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .steps-desc-container {
