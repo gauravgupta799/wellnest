@@ -95,19 +95,12 @@
     padding:em(10);
     transition:all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
     z-index: 1;
+    @include hover-effect($clr-secondary);
+
     span{
         display: flex;
     }
-    // &::before{
-    //     content:"";
-    //     position: absolute;
-    //     @include full-dimensions;
-    //     background: $clr-secondary;
-    //     clip-path: circle(0.0% at 50% 100%);
-    //     transition:clip-path 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-    //     z-index: -1;
-    // }
-
+  
     &--cta{
         background: $clr-blue-light-2;
         @include border-radius(50%);
@@ -115,10 +108,9 @@
 
     &:hover{
         cursor: pointer;
-        background: $clr-secondary;
-        // &::before{
-        //     clip-path: circle(50% at 50% 50%);
-        // }
+        &::before{
+            transform: translateY(0);
+        }
     } 
 
 

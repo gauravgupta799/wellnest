@@ -3,7 +3,6 @@ const body = document.querySelector(".body");
 const header = document.querySelector(".header-desktop");
 const hamburgerBtn = document.getElementById("hamburger-btn");
 const scrollingHeader = document.querySelector(".header");
-// const scrollingHeader = document.querySelector(".header-desktop");
 const headerTop = document.querySelector(".header-top");
 
 
@@ -34,21 +33,25 @@ ScrollTrigger.defaults({ scroller: document.body })
 // ====== Toggle Header On Scroll Start =======
 let prevScrollPos = lenis.scroll;
 function toggleHeader() {
-    let currentScrollPos = lenis.scroll;
-    if(prevScrollPos > currentScrollPos){
-        scrollingHeader.style.transform = "translateY(0)";
-        // header.classList.add("sticky");
+    let scrollTop = lenis.scrollY || document.documentElement.scrollTop;
+    if(scrollTop  > prevScrollPos){
+        header.classList.add("sticky");
+        scrollingHeader.classList.add("hidden");
     }else{
-        scrollingHeader.style.transform = "translateY(-186px)";
-        // header.classList.remove("sticky");
+        scrollTop === 0 ?  header.classList.remove("sticky") : header.classList.add("sticky");
+        scrollingHeader.classList.remove("hidden");
     }
-    prevScrollPos = currentScrollPos;
+    prevScrollPos = scrollTop <= 0 ? 0 : scrollTop;;
 }
 // ====== Toggle Header On Scroll End =======
+const mql = window.matchMedia("(min-width: 1200px)");
 
-function toggleTopHeader () {
+function toggleTopHeader(){
     const scrollY = lenis.scroll;
-    scrollY === 0 ?  headerTop.style.display = "block" : headerTop.style.display = "none";
+    if(mql.matches){
+        scrollY === 0 ?  headerTop.style.display = "block" : headerTop.style.display = "none";
+    }
+    // scrollY === 0 ?  headerTop.style.display = "block" : headerTop.style.display = "none";
 }
 
 function changeScreen(e){
@@ -62,7 +65,6 @@ function changeScreen(e){
     }
 }
 
-const mql = window.matchMedia("(min-width: 1200px)");
 mql.addEventListener("change", changeScreen);
 
 //======= Sticky Header End ===========
@@ -115,24 +117,24 @@ window.onload = function(){
         stagger:0.01,
         delay:-1.15,
     })
-    .fromTo(".action-btn", 
-        { opacity:0, y:30 },
-        { 
-            opacity:1,
-            y:0, 
-            stagger:0.02, 
-            delay:-1.2, 
-            duration:1
-        }
-    )
+    // .fromTo(".action-btn", 
+    //     { opacity:0, y:30 },
+    //     { 
+    //         opacity:1,
+    //         y:0, 
+    //         stagger:0.02, 
+    //         delay:-1.2, 
+    //         duration:1
+    //     }
+    // )
     .from(".header-btn", {
         y:30,
         delay:-1.25,
     })
-    .from(".hero-rating", {
-        y:50,
-        delay:-1.25,
-    })
+    // .from(".hero-rating", {
+    //     y:50,
+    //     delay:-1.25,
+    // })
     .from(".hero__title", {
         y:50,
         delay:-1.3,
@@ -142,27 +144,30 @@ window.onload = function(){
         delay:-1.35,
     })
 
-    .from(".hero-btn", {
-        y:50,
-        duration:1.2,
-        delay:-1.4,
-    })
-    .from([".counter-title" , ".counter-subTitle"], {
-        y:50,
-        duration:1.25,
-        delay:-1.45,
-        stagger:0.10,
-        ease:"power3.out"
-    })
-    .from(".ratings-item figure", { 
-            opacity:0,
-            y:20,
-            stagger:0.1,
-            delay:-1.45, 
-            duration:1.5, 
-            ease:"power3.out" 
-        }
-    )
+    const heroBtn = document.querySelector(".hero-btn");
+    if(heroBtn){
+        tl.from(heroBtn, {
+            y:50,
+            duration:1.2,
+            delay:-1.4,
+        });
+    }
+    // .from([".counter-title" , ".counter-subTitle"], {
+    //     y:50,
+    //     duration:1.25,
+    //     delay:-1.45,
+    //     stagger:0.10,
+    //     ease:"power3.out"
+    // })
+    // .from(".ratings-item figure", { 
+    //         opacity:0,
+    //         y:20,
+    //         stagger:0.1,
+    //         delay:-1.45, 
+    //         duration:1.5, 
+    //         ease:"power3.out" 
+    //     }
+    // )
 }
 // ----=== Loader End ----=========
 
@@ -207,23 +212,6 @@ if(hamburgerBtn){
 
 
 // ============ Swipers Start =================
-// const swiperTimelineBody = new Swiper('.story-timeline__body', {
-//     slidesPerView: 1,
-//     direction: "horizontal",
-//     spaceBetween: 30,
-//     loop:true,
-//     grabCursor: true,
-// });
-
-// const swiperTimelineBody = new Swiper('.story-timeline__body', {
-//     slidesPerView: 1,
-//     direction: "horizontal",
-//     spaceBetween: 30,
-//     loop:true,
-//     grabCursor: true,
-// });
-
-// ======== large thumbnail slider ===========
 var galleryTop = new Swiper(".gallery-top", {
     spaceBetween: 10,
     grabCursor: true,
@@ -303,7 +291,7 @@ accordions && toggleAccordion(accordions);
 
 
 // ---------- Mobile SubMenu Start --------
-const mobileSubmenu = document.querySelectorAll(".mobile-submenu ");
+const mobileSubmenu = document.querySelectorAll(".mobile-submenu");
 mobileSubmenu && mobileSubmenu.forEach((submenu)=>{
     submenu.addEventListener("click", function(){
         const menu = submenu.querySelector(".subMenu__list--mobile");

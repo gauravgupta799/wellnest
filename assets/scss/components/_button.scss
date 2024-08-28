@@ -23,7 +23,6 @@
     @include breakpoint-xl{
         padding:em(16) em(32);
     }
-
     span{
         color:$clr-white;
     }
@@ -31,10 +30,10 @@
         content:"";
         position: absolute;
         left: 0;
-        bottom: -100%;
-        width: 100%;
-        height: 100%;
-        transition: bottom 0.3s ease;
+        bottom: 0;
+        @include full-dimensions;
+        transform:translateY(100%);
+        transition: transform 0.3s ease;
         z-index: -1;
     }
     &:hover{
@@ -43,7 +42,7 @@
             color:$clr-white;
         }
         &::before{
-            bottom: 0;
+            transform:translateY(0);
         }
     }
 
@@ -54,7 +53,7 @@
         padding:0;
 
         span{
-            font-size: 14px;
+            font-size: rem(14);
             line-height: 1.78;
             font-family: $ff-secondary;
             text-decoration: underline;
@@ -65,12 +64,12 @@
                 font-size: rem(16);
             }
             @include breakpoint-xxl{
-                font-size: 18px;
+                font-size: rem(18);
             }
         }
         svg path{
-            width: 28px;
-            height: 24px;
+            width: rem(28);
+            height: rem(24);
             fill:$clr-white;
             transition:all 0.3 ease;
         }
@@ -94,6 +93,19 @@
 
     &::before{
         background: $clr-primary;
+    }
+}
+
+.bg-colored{
+    .btn--primary{
+        &:hover{
+            span{
+                color:$clr-secondary;
+            }
+            &::before{
+                background: $clr-white;
+            }
+        }
     }
 }
 
@@ -122,6 +134,7 @@
 
 
 .btn--transparent{
+    display: inline-flex;
     background:transparent;
     @include flex-center-vertical;
     gap:rem(8);
@@ -131,15 +144,25 @@
     }
     svg{
         path{
-            transition:fill 0.3s ease;
+            transition:fill 0.3s ease; 
         }
     }
+    .h-call-title,  
+    .h-call-text{
+        @include link-hover-effect($clr-black, $clr-secondary);
+    }
     &:hover{
-        span{
+        .h-call-text, span{
             background-position: 0 0;
         }
-        svg path{
-            fill:$clr-primary;
+        .h-call-text{
+            text-decoration: underline;
+            text-decoration-color: $clr-secondary;
+        }
+        svg {
+            path{
+                fill:$clr-primary;
+            }
         }
     }
 }

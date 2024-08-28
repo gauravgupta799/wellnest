@@ -76,16 +76,25 @@
         padding:em(16) em(12);
         @include border-radius(4px);
         border: solid 1px $clr-white;
-        background-color: $clr-primary;
         display: inline-block;
         transition:all 0.3s ease;
+        @include relative-hidden;
+        @include hover-effect();
+        z-index: 1;
         cursor: pointer;
+
         @include breakpoint-sm{
             font-size: rem(16);
+            padding:em(16);
+        }
+        @include breakpoint-xxl{
             padding:em(16) em(24);
         }
+
         &:hover{
-            background: $clr-secondary;
+            &::before{
+                transform: translateY(0);
+            }
         }
     }
 }
@@ -189,6 +198,7 @@ select {
         }
     }
 }
+
 .cta-address {
     color:$clr-white;
 }

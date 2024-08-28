@@ -27,9 +27,6 @@
         line-height: 1.78;
         text-transform: capitalize;
         font-family: $ff-secondary;
-        // @media only screen and (min-width:em(1366)){
-        //     font-size: rem(18);
-        // }
         @include breakpoint-lg{
             font-size: rem(18);
         }
@@ -44,6 +41,9 @@
         &:hover{
             span{
                 background-position: 0 0;
+            }
+            svg path{
+                fill: $clr-secondary;
             }
         }
     }
@@ -67,7 +67,6 @@
     background: $clr-primary;
     transform:translateX(-100%);
     transition:transform 0.2s ease-out;
-    // display: none;
     @include breakpoint-lg{
         transform:translateX(-100%) !important;
     }
@@ -111,12 +110,10 @@
         }
     }
     .socials-link{
-        &::before{
-            background: $clr-secondary;
-        }
+        background: $clr-white;
+        @include hover-effect($clr-white);
     }
 }
-
 // ===== MObile Menu End ===========
 
 
@@ -127,7 +124,7 @@
         position: absolute;
         background: $clr-primary;
         background: $clr-white;
-        width: 260px;
+        width: rem(280);
         @include border-radius(4px);
         box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
         transform: translateY(10px);
@@ -138,6 +135,8 @@
             @include relative-hidden;
             @include border-radius(4px);
             white-space: nowrap;
+            @include hover-effect($clr-secondary);
+
             ul{
                 display: none;
                 list-style: none;
@@ -146,10 +145,12 @@
                 top: 0;
                 background-color: $clr-primary;  
             }
-
+        
             &:hover{
                 cursor: pointer;
-                background:$clr-secondary;
+                &::before{
+                    transform: translateY(0);
+                }
                 a{
                     color:$clr-white;
                 }
@@ -160,17 +161,18 @@
         }
 
         &--mobile{
-            max-width: 300px;
-            margin-left: 16px;
+            max-width: rem(320);
             @include border-radius(4px);
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
 
             li{
-                display: inline-flex;
+                @include relative-hidden;
+                z-index: 1;
                 @include border-radius(4px);
-                .subMenu__link{
+                @include hover-effect($clr-secondary);
+                a{
                     transform:translateY(0);
                     color:$clr-white;
                     font-size: rem(20);
@@ -178,8 +180,10 @@
                     padding-block:0.7em;
                 }
                 &:hover{
-                    background-color: $clr-secondary;
-                    .subMenu__link{
+                    &::before{
+                        transform: translateY(0);
+                    }
+                    a{
                         color:$clr-white;
                     }
                 }
@@ -190,7 +194,7 @@
     &__link{
         $n:10;
         display: inline-block;
-        color:$clr-primary;
+        color:$clr-black;
         font-size: rem(16);
         line-height: 1.15;
         padding:1em;
@@ -223,7 +227,7 @@
 
         .nav__link{
             span{
-                color:$clr-secondary;
+                background-position: 0 0;
             }
             .caret-down-icon{
                 svg{
@@ -240,6 +244,8 @@
 
 
 .mobile-submenu{
+    display: inline-flex;
+    flex-direction: column;
     &.active{
         .dropdown-icon{
             svg{
@@ -252,7 +258,7 @@
         }
         .mobile-menu__link{
             span{
-                color:$clr-secondary;
+               background-position: 0 0;
             }
         }
     }

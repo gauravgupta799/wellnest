@@ -13,38 +13,14 @@
 // --------- Figtree Regular -------------
 @font-face{
     font-family:"Figtree-Regular";
-    src:url("../../../assets/fonts/Figtree/Figtree-Regular.eot");
-    src:url("../../../assets/fonts/Figtree/Figtree-Regular.eot?#iefix") format("embedded-opentype"), 
-        url("../../../assets/fonts/Figtree/Figtree-Regular.woff2") format('woff2'),
-        url("../../../assets/fonts/Figtree/Figtree-Regular.woff") format('woff'),
-        url("../../../assets/fonts/Figtree/Figtree-SemiBold.ttf") format('truetype'),
-        url("../../../assets/fonts/Figtree/Figtree-Regular.svg#Figtree-Regular") format('svg');
+    src:url("../assets/fonts/Figtree/Figtree-Regular.eot");
+    src:url("../assets/fonts/Figtree/Figtree-Regular.eot?#iefix") format("embedded-opentype"), 
+        url("../assets/fonts/Figtree/Figtree-Regular.woff2") format('woff2'),
+        url("../assets/fonts/Figtree/Figtree-Regular.woff") format('woff'),
+        url("../assets/fonts/Figtree/Figtree-SemiBold.ttf") format('truetype'),
+        url("../assets/fonts/Figtree/Figtree-Regular.svg#Figtree-Regular") format('svg');
     font-weight:400;
 }
-
-// --------- Matter Regular -------------
-// @font-face{
-//     font-family:"Matter-Regular";
-//     src:url("../assets/fonts/Matter/Matter-Regular.woff2");
-//     src:url("../assets/fonts/Matter/Matter-Regular.eot?#iefix") format("embedded-opentype"), 
-//         url("../assets/fonts/Matter/Matter-Regular.woff2") format('woff2'),
-//         url("../assets/fonts/Matter/Matter-Regular.woff") format('woff'),
-//         url("../assets/fonts/Matter/Matter-Regular.ttf") format('truetype'),
-//         url("../assets/fonts/Matter/Matter-Regular.svg#Matter-Regular") format('svg');
-//     font-weight:400;
-// }
-
-// --------- Sora Regular -------------
-// @font-face{
-//     font-family:"Sora-Regular";
-//     src:url("../assets/fonts/Sora/Sora-Regular.woff2");
-//     src:url("../assets/fonts/Sora/Sora-Regular.eot?#iefix") format("embedded-opentype"), 
-//         url("../assets/fonts/Sora/Sora-Regular.woff2") format('woff2'),
-//         url("../assets/fonts/Sora/Sora-Regular.woff") format('woff'),
-//         url("../assets/fonts/Sora/Sora-Regular.ttf") format('truetype'),
-//         url("../assets/fonts/Sora/Sora-Regular.svg#Sora-Regular") format('svg');
-//     font-weight:400;
-// }
 
 
 $ff-primary:"Figtree-SemiBold", sans-serif;

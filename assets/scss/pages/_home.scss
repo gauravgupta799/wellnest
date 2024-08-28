@@ -9,11 +9,18 @@
 .hero{
     position: relative;
     background: $clr-primary;
-    height: 100dvh;
+    height: 80vh;
    
     &--home{
         @include flex-center-horizontal;
         align-items: flex-end;
+        max-height: rem(900); /* Cap the height on larger screens */
+        @media only screen and (max-width:em(768)){
+            min-height: rem(760); /* Ensure it's not too short on small screens */
+        }
+        @media only screen and (min-width:em(768)) and (max-width:em(1024)){
+            min-height: rem(1024);
+        }
     }
     &--about{
         height: 60dvh;
@@ -35,8 +42,7 @@
 
     &__inner{
         position: relative;
-        display: flex;
-        align-items: center;
+        @include flex-center-vertical;
         height: 100%;
     }
 
@@ -169,6 +175,10 @@
 .card-period-wrapper{
     @include flex-center-vertical;
     gap:rem(32);
+
+    small{
+        font-size: rem(14);
+    }
 }
 
 
@@ -247,6 +257,9 @@
 .distinctive-card{
     max-width: 80%;
     margin: 0 auto;
+   @media (min-width: em(1440)){
+    max-width: 64%;
+   }
 }
 
 .story-timeline{

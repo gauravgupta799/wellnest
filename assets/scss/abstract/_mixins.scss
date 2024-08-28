@@ -131,6 +131,21 @@
     transition: background-position .3s ease;
 }
 
+@mixin hover-effect($bg-color:$clr-secondary) {
+    &::before{
+        content:"";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @include full-dimensions;
+        background:$bg-color;
+        z-index: -1;
+        transform: translateY(100%);
+        transition: transform 0.25s ease-out;
+        transform-origin: bottom;
+    }
+}
+
 
 @mixin caret-down{
     content:"";

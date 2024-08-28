@@ -88,10 +88,33 @@
                                     <span>About</span>
                                 </a>
                             </li>             
-                            <li class="nav__list">
-                                <a href="./insurance.html" class="nav__link" >
-                                    <span>Insurance</span>
+                            <li class="nav__list subMenu">
+                                <a href="./insurance.html" class="nav__link nav__link--submenu">
+                                    <span>Insurance</span>   
+                                    <span class="caret-down-icon mt-0">
+                                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                                            <path d="M14 20l10 10 10-10z" fill="#000"></path>
+                                        </svg> 
+                                    </span>
                                 </a>
+                                 <!-- Services Submenu -->
+                                 <ul class="subMenu__list list-none" id="submenu-desktop">
+                                    <li class="">
+                                        <a href="./insurance/group-insurance.html" class="subMenu__link">Group Insurance</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="./insurance/medical-insurance.html" class="subMenu__link">Medicare Insurance</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="./insurance/individual-health-insurance.html" class="subMenu__link">Individual Health Insurance</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="./insurance/life-insurance.html" class="subMenu__link">Life Insurance</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="./insurance/dental-and-vision-insurance.html" class="subMenu__link">Dental and Vision Insurance</a>
+                                    </li>                                          
+                                </ul>
                             </li>
                             <li class="nav__list">
                                 <a href="./blog.html" class="nav__link" >
@@ -421,14 +444,14 @@
         <!-- CTA Section Start -->
         <section class="cta mt--6 mt--md--8 mt--xl--10 mt--xxl--12 bg--primary bg-colored">
             <div class="page-container page-container--mr">
-                <div class="row align-items-cente">
-                    <div class="col-xl-6 px-0">
-                        <figure class="fade-in">
+                <div class="row">
+                    <div class="col-xl-6 px-0 d-xl-flex">
+                        <figure class="fade-in d-xl-flex">
                             <img src="./assets/images/home/cta-img.webp" alt="" class="img-fluid" loading="lazy">
                         </figure>
                     </div>
                     <div class="col-xl-6 d-flex align-items-center">
-                        <div class="form-container py--3 py--xl--2 pb-lg-0">
+                        <div class="form-container py--3 py--xl--2">
                             <h4 class="fade-in">Ready to Secure Your Future?</h4>
                              <div class="overflow-wrapper">
                                 <p class="mt-1 fade-in-up fz-18">
@@ -510,7 +533,7 @@
             <div class="page-container">
                 <div class="row">
                     <div class="col-sm-10 col-md-8">
-                        <a href="./" class="fade-in d-inline-flex">
+                        <a href="./index.html" class="fade-in d-inline-flex">
                             <img src="./assets/logos/wellnest-logo.svg" alt="Wellnest logo" class="img-fluid" loading="lazy">
                         </a>
                         <div class="overlow-wrapper">

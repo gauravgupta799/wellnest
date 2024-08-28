@@ -72,6 +72,12 @@
 
         <!-- Desktop Menu Start -->
         <div class="header-desktop">
+            <!-- <div class="header__inner-top">
+                <figure class="header__logo">
+                    <img src="./assets/logos/logo-mobile.svg" alt="" class="img-fluid">
+                </figure>
+                <div class="divider divider--grey"></div>
+            </div> -->
             <div class="page-container">
                 <div class="header__inner-desktop">
                     
@@ -88,10 +94,33 @@
                                     <span>About</span>
                                 </a>
                             </li>             
-                            <li class="nav__list">
-                                <a href="./insurance.html" class="nav__link" >
-                                    <span>Insurance</span>
+                            <li class="nav__list subMenu">
+                                <a href="./insurance.html" class="nav__link nav__link--submenu">
+                                    <span>Insurance</span>   
+                                    <span class="caret-down-icon mt-0">
+                                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                                            <path d="M14 20l10 10 10-10z" fill="#000"></path>
+                                        </svg> 
+                                    </span>
                                 </a>
+                                 <!-- Services Submenu -->
+                                 <ul class="subMenu__list list-none" id="submenu-desktop">
+                                    <li class="">
+                                        <a href="./insurance/group-insurance.html" class="subMenu__link">Group Insurance</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="./insurance/medical-insurance.html" class="subMenu__link">Medicare Insurance</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="./insurance/individual-health-insurance.html" class="subMenu__link">Individual Health Insurance</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="./insurance/life-insurance.html" class="subMenu__link">Life Insurance</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="./insurance/dental-and-vision-insurance.html" class="subMenu__link">Dental and Vision Insurance</a>
+                                    </li>                                          
+                                </ul>
                             </li>
                             <li class="nav__list">
                                 <a href="./blog.html" class="nav__link" >
@@ -192,30 +221,33 @@
                                 </a>
                             </li>
                             <li class="mobile-submenu">
-                                <a href="./insurance.html" class="mobile-menu__link">
+                                <a  class="mobile-menu__link">
                                     <span>Insaurance</span>
-                                    <!-- <span class="dropdown-icon">
+                                    <span class="dropdown-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 15.997 9.878">
-                                            <path data-name="Icon material-navigate-next" d="M1.88 0 0 1.88 6.106 8 0 14.118 1.88 16l8-8z" transform="rotate(90 7.998 7.999)" fill="#000"/>
+                                            <path data-name="Icon material-navigate-next" d="M1.88 0 0 1.88 6.106 8 0 14.118 1.88 16l8-8z" transform="rotate(90 7.998 7.999)" fill="#fff"/>
                                         </svg>  
-                                    </span> -->
+                                    </span>
                                 </a>
                            
                                 <!-- Services Submenu -->
                                 <ul class="subMenu__list--mobile list-none">
                                     <li class="">
+                                        <a href="./insurance.html" class="subMenu__link">Insaurance</a>
+                                    </li>
+                                    <li class="ml--1">
                                         <a href="./insurance/group-insurance.html" class="subMenu__link">Group Insurance</a>
                                     </li>
-                                    <li class="">
+                                    <li class="ml--1">
                                         <a href="./insurance/medicare-insurance.html" class="subMenu__link">Medicare Insurance</a>
                                     </li>
-                                    <li class="">
+                                    <li class="ml--1">
                                         <a href="./insurance/individual-health-insurance.html" class="subMenu__link">Individual Health Insurance</a>
                                     </li>                                           
-                                    <li class="">
+                                    <li class="ml--1">
                                         <a href="./insurance/life-insurance.html" class="subMenu__link">Life Insurance</a>
                                     </li>                                           
-                                    <li class="">
+                                    <li class="ml--1">
                                         <a href="./insurance/dental-and-vision-insurance.html" class="subMenu__link">Dental and Vision Insurance</a>
                                     </li>    
                                 </ul>
@@ -295,68 +327,6 @@
     <!-- Main Start -->
     <main class="main">
 
-        <!-- CTA Section Start -->
-        <!-- <section class="cta mt--6 mt--md--8 mt--xl--10 mt--xxl--12 ">
-            <div class="page-container">
-                <div class="row">
-                    <div class="col-xl-6">
-                       <h1 class="hero__title">Contact us and Get Better Coverage</h1>
-                        <div class="overflow-wrapper">
-                            <p class="mt--1 hero__subTitle">
-                                Offering personalized advice and tailored solutions, ensuring you get maximum value and comprehensive coverage.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 d-flex align-items-center">
-                        <div class="form-container">
-                            <h4 class="fade-in">Fill out the form</h4>
-                             <div class="overflow-wrapper">
-                                <p class="mt-1 fade-in-up fz-18">
-                                    Take the first step towards comprehensive coverage and peace of mind. Contact us today to schedule a call with Bruno, and let us help you find
-                                </p>
-                             </div>
-                            <form class="form-wrapper cta-form-wrapper mt--2" id="signup-cta-form">
-                                <div class="form__group mb-4 fade-in-up">                                                                 
-                                    <input type="text" name="name" id="name" class="form__control" placeholder="" required>
-                                    <label for="name" class="form__label">Name</label>  
-                                </div>
-    
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form__group mb-4 fade-in-up">                 
-                                            <input type="email" name="email" id="email" class="form__control"  required>
-                                            <label for="email" class="form__label">Email Address</label>  
-                                        </div>  
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form__group mb-4 fade-in-up">                                                        
-                                            <input type="phone" name="phone" id="phone" class="form__control" required>
-                                            <label for="phone" class="form__label">Phone Number</label>   
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form__group fade-in-up mt--2">
-                                    <button class="btn btn--primary" id="signup-cta-btn">
-                                        <span>Get a Quote</span>
-                                    </button>  
-                                    <div class="form-brand-group mt-3">
-                                        <figure class="">
-                                            <img src="./assets/images/mc-afee-secure.svg" alt="" class="img-fluid" loading="lazy">
-                                        </figure>
-                                        <figure class="">
-                                            <img src="./assets/images/norton.svg" alt="" class="img-fluid" loading="lazy">
-                                        </figure>
-                                    </div>             
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- CTA Section End -->
-
         <!-- Hero Section Start -->
         <section class="contact-banner bg--primary overflow-wrapper">
             <div class="page-container page-container--ml">
@@ -370,7 +340,7 @@
                         </div>
                         <div class="cta-wrapper mt--2 mt--sm--3 mt--xxl--4">
                             <ul class="cta-list list-none overflow-wrapper">
-                                <li class="cta-item mb--1 mb--xl--2">
+                                <li class="cta-item mb--1 mb--xl--2 hero__subTitle">
                                     <a href="tel:+1 123 456 8907" class="cta-link" target="_blank" rel="noopener noreferrer">
                                         <span class="cta-icon-box">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 27.01 27.008">
@@ -380,7 +350,7 @@
                                         <span class="mt-0">+1 123 456 8907</span>
                                     </a>
                                 </li>
-                                <li class="cta-item mb--1 mb--xl--2">
+                                <li class="cta-item mb--1 mb--xl--2 hero__subTitle">
                                     <a href="mailto:info@wellnest.com" class="cta-link" target="_blank" rel="noopener noreferrer">
                                         <span class="cta-icon-box">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 26.122 20.898">
@@ -390,7 +360,7 @@
                                         <span class="mt-0">info@wellnest.com</span>
                                     </a>
                                 </li>
-                                <li class="cta-item mt-2">
+                                <li class="cta-item mt-2 hero__subTitle">
                                     <a href="https://maps.app.goo.gl/WGLqv47vcrxkudYbA" class="cta-link" target="_blank">
                                         <span class="cta-icon-box">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 18.426 24.568">
@@ -402,7 +372,7 @@
                                         </address> 
                                     </a>                              
                                 </li>
-                                <li class="cta-item ml--1">
+                                <li class="cta-item ml--1 hero__subTitle">
                                     <ul class="socials-list list-none justify-content-start mt--2">
                                         <li class="socials-item fade-in-up">
                                             <a href="https://www.facebook.com/creative-design" class="socials-link socials-link--cta">
@@ -439,7 +409,7 @@
                     </div>
                     <div class="col-sm-12 col-lg-6 bg--white px--sm--1 px--md--2 p--xl--5 p--xxl--7">
                         <div class="cta-form-container py--3 py-lg-0">
-                            <h4 class="fade-in">Fill out the form</h4>
+                            <h4 class="hero__title">Fill out the form</h4>
                             <div class="overflow-wrapper">
                                <p class="mt-1 fade-in-up fz-18 pr--sm--5 pr--md--8 pr--lg--0">
                                    Take the first step towards comprehensive coverage and peace of mind. Contact us today to schedule a call with Bruno, and let us help you find
@@ -447,7 +417,7 @@
                             </div>
                             <div class="cta-form-wrapper mt--2">
                                 <form class="form cta-form-wrapper" id="contact-form">
-                                    <div class="form__group mb-4">
+                                    <div class="form__group fade-in-up mb-4">
                                         <input type="text" class="form__control" id="name" autocomplete="off" placeholder="" required>
                                         <label for="name" class="form__label">Name</label>
                                     </div>
@@ -476,7 +446,7 @@
                                         </select>
                                         <label for="insurance-type" class="form__label">Insurance Type</label>
                                     </div>
-                                    <div class="form__group">
+                                    <div class="form__group fade-in-up">
                                         <textarea col="30" rows="4" class="form__control form-textarea" id="textarea" autocomplete="off" placeholder="" required></textarea>
                                         <label for="textarea" class="form__label form__label--textarea">Any Comment here</label>
                                     </div>
@@ -511,7 +481,7 @@
             <div class="page-container">
                 <div class="row">
                     <div class="col-sm-10 col-md-8">
-                        <a href="./" class="fade-in d-inline-flex">
+                        <a href="./index.html" class="fade-in d-inline-flex">
                             <img src="./assets/logos/wellnest-logo.svg" alt="Wellnest logo" class="img-fluid" loading="lazy">
                         </a>
                         <div class="overlow-wrapper">
